@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usinbel - AI Chatbot & Assistant</title>
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome (Preload for Performance) -->
+    <link rel="preload" as="script" href="https://kit.fontawesome.com/3e85bd6ad8.js">
+    <script src="https://kit.fontawesome.com/3e85bd6ad8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+
+    <!-- Background Animation -->
+    <canvas id="constellation-bg"></canvas>
+    <div id="particles-js"></div>
+
+    <!-- Navigation -->
+    <header>
+        <!-- Your navigation code here -->
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Hero content here -->
+    </section>
+
+    <!-- JavaScript Files -->
+    <script src="script.js" defer></script>
+
+</body>
+</html>
+
+
+
+<body>
+<canvas id="constellation-bg"></canvas>
+
+    <!-- Background Animation -->
+    <div id="particles-js"></div>
+
+ <!-- Navigation -->
+<header>
+  <nav class="navbar">
+    <div class="logo">USINBEL</div>
+   <ul class="nav-left">
+<li class="nav-item dropdown">
+  <!-- Capabilities Dropdown in Navigation -->
+<li class="nav-item dropdown">
+    <a href="#" class="nav-link" id="capabilities-btn">Capabilities</a>
+    <div class="dropdown-content" id="capabilities-dropdown">
+        <div class="capabilities-menu">
+            <!-- Left Panel -->
+            <div class="capabilities-list">
+                <div class="capability-item active" data-desc="ai-voice-agents">
+                    <img src="icons/voice-agent.svg" alt="AI Voice Agents">
+                    <span>AI Voice Agents</span>
+                </div>
+                <div class="capability-item" data-desc="call-automation">
+                    <img src="icons/call-automation.svg" alt="Smart Call Automation">
+                    <span>Smart Call Automation</span>
+                </div>
+                <div class="capability-item" data-desc="predictive-insights">
+                    <img src="icons/predictive-ai.svg" alt="Predictive AI Insights">
+                    <span>Predictive AI Insights</span>
+                </div>
+                <div class="capability-item" data-desc="omnichannel-ai">
+                    <img src="icons/omnichannel.svg" alt="Omnichannel Voice AI">
+                    <span>Omnichannel Voice AI</span>
+                </div>
+                <div class="capability-item" data-desc="personalized-ai">
+                    <img src="icons/personalized-ai.svg" alt="Hyper-Personalized AI">
+                    <span>Hyper-Personalized AI Models</span>
+                </div>
+            </div>
+
+            <!-- Right Panel -->
+            <div class="capabilities-description">
+                <div id="ai-voice-agents" class="capability-desc active">
+                    <h3>AI Voice Agents →</h3>
+                    <p>AI-powered voice agents for seamless customer interactions.</p>
+                    <div class="capability-sub-options">
+                        <div class="sub-option">
+                            <span>🔹 Real-Time Conversations</span>
+                            <p>Engage customers with instant responses & natural dialogue.</p>
+                        </div>
+                        <div class="sub-option">
+                            <span>🔹 Sentiment Analysis</span>
+                            <p>Understands tone & context for better communication.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="call-automation" class="capability-desc">
+                    <h3>Smart Call Automation →</h3>
+                    <p>Automate customer calls, scheduling, & support workflows.</p>
+                    <div class="capability-sub-options">
+                        <div class="sub-option">
+                            <span>🔹 Reduce Wait Times</span>
+                            <p>Instantly answers & routes calls for efficiency.</p>
+                        </div>
+                        <div class="sub-option">
+                            <span>🔹 Voice-Based IVR</span>
+                            <p>AI-powered interactive voice response system.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="predictive-insights" class="capability-desc">
+                    <h3>Predictive AI Insights →</h3>
+                    <p>AI-driven analytics to anticipate customer needs.</p>
+                    <div class="capability-sub-options">
+                        <div class="sub-option">
+                            <span>🔹 Detects Trends</span>
+                            <p>Recognizes patterns in customer behavior.</p>
+                        </div>
+                        <div class="sub-option">
+                            <span>🔹 Real-Time Recommendations</span>
+                            <p>Provides AI-powered suggestions & insights.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="omnichannel-ai" class="capability-desc">
+                    <h3>Omnichannel Voice AI →</h3>
+                    <p>Seamless AI integration across multiple communication channels.</p>
+                    <div class="capability-sub-options">
+                        <div class="sub-option">
+                            <span>🔹 Cross-Platform AI</span>
+                            <p>Works across voice, chat, IVR & WhatsApp.</p>
+                        </div>
+                        <div class="sub-option">
+                            <span>🔹 Unified Experience</span>
+                            <p>Consistent interactions across channels.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="personalized-ai" class="capability-desc">
+                    <h3>Hyper-Personalized AI Models →</h3>
+                    <p>AI models tailored for your brand & industry.</p>
+                    <div class="capability-sub-options">
+                        <div class="sub-option">
+                            <span>🔹 Custom AI Training</span>
+                            <p>Adapts to your unique business needs.</p>
+                        </div>
+                        <div class="sub-option">
+                            <span>🔹 Industry-Specific Flows</span>
+                            <p>Conversational AI designed for your sector.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</li>
+
+
+   <!-- Sectors Dropdown in Navigation -->
+<li class="nav-item dropdown">
+    <a href="#" class="nav-link" id="sectors-btn">Sectors</a>
+    <div class="dropdown-content" id="sectors-dropdown">
+        <div class="sectors-menu">
+            <!-- Left Panel -->
+            <div class="sectors-list">
+                <div class="sector-item active" data-desc="customer-support-ai">
+                    <img src="icons/customer-support.svg" alt="Customer Support AI">
+                    <span>Customer Support AI</span>
+                </div>
+                <div class="sector-item" data-desc="healthcare-ai">
+                    <img src="icons/healthcare.svg" alt="Healthcare AI Assistants">
+                    <span>Healthcare AI Assistants</span>
+                </div>
+                <div class="sector-item" data-desc="banking-finance-ai">
+                    <img src="icons/finance.svg" alt="Banking & Finance AI">
+                    <span>Banking & Finance AI</span>
+                </div>
+                <div class="sector-item" data-desc="ecommerce-ai">
+                    <img src="icons/ecommerce.svg" alt="E-Commerce AI Automation">
+                    <span>E-Commerce AI Automation</span>
+                </div>
+                <div class="sector-item" data-desc="telecom-ivr-ai">
+                    <img src="icons/telecom.svg" alt="Telecom & IVR AI">
+                    <span>Telecom & IVR AI</span>
+                </div>
+            </div>
+
+            <!-- Right Panel -->
+            <div class="sectors-description">
+                <div id="customer-support-ai" class="sector-desc active">
+                    <h3>Customer Support AI →</h3>
+                    <p>AI voice agents that handle customer queries with precision and efficiency.</p>
+                    <div class="sector-sub-options">
+                        <div class="sub-option">
+                            <span>🔹 Instant Query Resolution</span>
+                            <p>AI responds to customer queries in real-time.</p>
+                        </div>
+                        <div class="sub-option">
+                            <span>🔹 Call Deflection & Routing</span>
+                            <p>Automatically transfers complex issues to human agents.</p>
+                        </div>
+                        <div class="sub-option">
+                            <span>🔹 Sentiment Analysis</span>
+                            <p>Understands customer frustration and urgency to improve interactions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="healthcare-ai" class="sector-desc">
+                    <h3>Healthcare AI Assistants →</h3>
+                    <p>Automates appointments, reminders, and patient support with AI-powered voice bots.</p>
+                    <div class="sector-sub-options">
+                        <div class="sub-option">
+                            <span>🔹 Appointment Scheduling</span>
+                            <p>Handles booking, rescheduling, and reminders.</p>
+                        </div>
+                        <div class="sub-option">
+                            <span>🔹 Symptom Checker AI</span>
+                            <p>Guides patients based on voice-based symptom analysis.</p>
+                        </div>
+                        <div class="sub-option">
+                            <span>🔹 Insurance & Billing Queries</span>
+                            <p>Manages insurance claims and invoice requests.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="banking-finance-ai" class="sector-desc">
+                    <h3>Banking & Finance AI →</h3>
+                    <p>AI automates loan processing, fraud detection, and voice authentication.</p>
+                    <div class="sector-sub-options">
+                        <div class="sub-option">
+                            <span>🔹 Automated Loan Processing</span>
+                            <p>Speeds up loan applications and approvals.</p>
+                        </div>
+                        <div class="sub-option">
+                            <span>🔹 AI-Powered Fraud Detection</span>
+                            <p>Identifies suspicious activities in real-time.</p>
+                        </div>
+                        <div class="sub-option">
+                            <span>🔹 Secure Voice Authentication</span>
+                            <p>Uses biometric voice verification for enhanced security.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="ecommerce-ai" class="sector-desc">
+                    <h3>E-Commerce AI Automation →</h3>
+                    <p>Enhances customer shopping experience through AI-driven automation.</p>
+                    <div class="sector-sub-options">
+                        <div class="sub-option">
+                            <span>🔹 AI Order Tracking</span>
+                            <p>Provides real-time updates on order status.</p>
+                        </div>
+                        <div class="sub-option">
+                            <span>🔹 AI Sales Assistance</span>
+                            <p>Helps customers find products using voice search.</p>
+                        </div>
+                        <div class="sub-option">
+                            <span>🔹 Returns & Refund Automation</span>
+                            <p>Handles return requests and refunds seamlessly.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="telecom-ivr-ai" class="sector-desc">
+                    <h3>Telecom & IVR AI →</h3>
+                    <p>AI-powered voice bots for automating SIM activations, IVR, and tech support.</p>
+                    <div class="sector-sub-options">
+                        <div class="sub-option">
+                            <span>🔹 AI-Powered IVR</span>
+                            <p>Automates menu navigation and customer queries.</p>
+                        </div>
+                        <div class="sub-option">
+                            <span>🔹 Mobile Plan Recommendations</span>
+                            <p>Suggests best-fit plans based on usage.</p>
+                        </div>
+                        <div class="sub-option">
+                            <span>🔹 Network & Connectivity Support</span>
+                            <p>Helps troubleshoot network issues with AI assistance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</li>
+
+   
+   <li class="nav-item dropdown">
+    <a href="#" class="nav-link" id="about-us-btn">About Us</a>
+    <div class="dropdown-content" id="about-us-dropdown">
+        <div class="about-menu">
+            <!-- Left Panel -->
+            <div class="about-list">
+                <div class="about-item active" data-desc="who-we-are">
+                    <img src="icons/about-us.svg" alt="Who We Are">
+                    <span>Who We Are</span>
+                </div>
+                <div class="about-item" data-desc="our-vision">
+                    <img src="icons/vision.svg" alt="Our Vision">
+                    <span>Our Vision</span>
+                </div>
+                <div class="about-item" data-desc="our-tech">
+                    <img src="icons/technology.svg" alt="Our Technology">
+                    <span>Our Technology</span>
+                </div>
+                <div class="about-item" data-desc="why-usinbel">
+                    <img src="icons/why-us.svg" alt="Why Usinbel?">
+                    <span>Why Usinbel?</span>
+                </div>
+                <div class="about-item" data-desc="our-journey">
+                    <img src="icons/journey.svg" alt="Our Journey">
+                    <span>Our Journey</span>
+                </div>
+            </div>
+
+            <!-- Right Panel -->
+            <div class="about-description">
+                <div id="who-we-are" class="about-desc active">
+                    <h3>Who We Are →</h3>
+                    <p>Usinbel is a forward-thinking AI company dedicated to transforming the way businesses interact with AI-driven automation.  
+                    We specialize in building highly intelligent, adaptive, and scalable AI assistants that enhance customer engagement,  
+                    streamline workflows, and create more human-like conversations with cutting-edge technology.</p>
+                </div>
+                <div id="our-vision" class="about-desc">
+                    <h3>Our Vision →</h3>
+                    <p>Our vision is to create a future where AI and humans work seamlessly together,  
+                    eliminating inefficiencies and making digital interactions smoother, smarter, and more intuitive.  
+                    We aim to bridge the gap between AI automation and human-like understanding through innovation and deep learning advancements.</p>
+                </div>
+                <div id="our-tech" class="about-desc">
+                    <h3>Our Technology →</h3>
+                    <p>Powered by state-of-the-art machine learning and NLP, Usinbel’s AI is designed to adapt, evolve, and optimize conversations in real-time.  
+                    Our platform integrates with multiple channels, ensuring businesses can leverage AI for voice, chat, and automation  
+                    while maintaining a seamless user experience.</p>
+                </div>
+                <div id="why-usinbel" class="about-desc">
+                    <h3>Why Usinbel? →</h3>
+                    <p>Unlike standard AI solutions, Usinbel custom-builds AI systems tailored to your business needs.  
+                    Our AI assistants are not just tools; they are digital employees designed to work alongside your team,  
+                    automating repetitive tasks while improving customer interactions and operational efficiency.</p>
+                </div>
+                <div id="our-journey" class="about-desc">
+                    <h3>Our Journey →</h3>
+                    <p>Usinbel started with a bold idea: to redefine AI automation for businesses.  
+                    From a concept to an AI-driven powerhouse, our journey has been fueled by innovation, research, and an unrelenting pursuit of excellence.  
+                    Today, we continue pushing the boundaries of AI to deliver smarter, faster, and more reliable AI solutions for the future.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</li>
+
+    <li><a href="book-demo.html">Book a Demo</a></li>
+</ul>
+
+    <ul class="nav-right">
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="hamburger-menu">&#9776;</div>
+  </nav>
+</header>
+
+
+    <!-- Hero Section -->
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h2 class="website-name">Welcome to <span class="highlight">Usinbel</span></h2>
+    <span class="tagline">AI That Works for You</span>
+    <h1>AI Automation, Scalable Intelligence <span class="highlight">for Seamless Conversations</span></h1>
+    <p>Enhance customer interactions, automate workflows, and scale effortlessly with Usinbel’s AI voice assistants.</p>
+
+    <div class="hero-buttons">
+      <a href="#live-ai-test" class="btn-glow">Experience AI Calls</a>
+      <a href="#ai-demo" class="btn-glow">See AI in Action</a>
+    </div>
+  </div>
+</section>
+
+
+
+
+    <!-- Link JavaScript -->
+    <script src="script.js"></script>
+
+
+<section class="capabilities">
+    <div class="capabilities-container">
+        <h2>AI Capabilities That <span class="highlight">Transform</span> Business</h2>
+        <p>Unlock the full potential of AI-driven automation, efficiency, and intelligence.</p>
+        <div class="capabilities-grid">
+            <div class="capability-card">
+                <h3>Conversational AI</h3>
+                <p>AI that understands context, responds like a human, and supports multiple languages.</p>
+            </div>
+            <div class="capability-card">
+                <h3>Workflow Automation</h3>
+                <p>Automate tasks, streamline processes, and increase operational efficiency.</p>
+            </div>
+            <div class="capability-card">
+                <h3>AI-Powered Support</h3>
+                <p>Handle 24/7 customer queries, resolve issues, and integrate AI into customer service.</p>
+            </div>
+            <div class="capability-card">
+                <h3>Predictive Analytics</h3>
+                <p>Use AI-driven insights to forecast trends, optimize decision-making, and improve strategy.</p>
+            </div>
+            <div class="capability-card">
+                <h3>Data Security AI</h3>
+                <p>AI systems that safeguard sensitive data and enhance cybersecurity defenses.</p>
+            </div>
+            <div class="capability-card">
+                <h3>AI Personalization</h3>
+                <p>Tailor AI models to fit your brand’s unique voice, style, and operational needs.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- AI Discovery Section -->
+<section class="ai-discovery">
+    <div class="discovery-container">
+        <!-- Left Side - Features (Vertical Alignment) -->
+        <div class="discovery-box">
+            <h2 class="discovery-heading">AI Voices That Speak Your Brand</h2>
+            <div class="discovery-features">
+                <div class="feature"><i class="fas fa-phone"></i> Effortless AI Call Routing</div>
+                <div class="feature"><i class="fas fa-question-circle"></i> Handles Complex Conversations</div>
+                <div class="feature"><i class="fas fa-microphone"></i> Tailor AI Voices to Your Brand</div>
+                <div class="feature"><i class="fas fa-database"></i> Seamless CRM & Data Integration</div>
+            </div>
+        </div>
+
+        <!-- Right Side - Text Content -->
+        <div class="discovery-text">
+            <span class="tagline">Conversational AI at Its Best</span>
+            <h2>Next-Gen AI Voice Agents for Smarter Customer Conversations</h2>
+            <p>Enhance customer experiences with AI-driven voice agents that sound natural, adapt to your needs, and provide instant, intelligent responses.</p>
+            <p class="fun-fact"><em>Fun Fact: AI voice agents now manage over <strong>70%</strong> of inbound customer calls, reducing wait times and improving satisfaction.</em></p>
+        </div>
+    </div>
+</section>
+
+
+<!-- AI Customization Section -->
+<section class="ai-customization">
+    <div class="customization-container">
+        <!-- Left Side - Text Content -->
+        <div class="customization-text">
+            <span class="tagline">AI Voices, Engineered for Impact</span>
+            <h2><span class="highlight">Precision in Every Conversation</span> by AI.</h2>
+            <p>AI voice agents built for seamless interaction. Whether handling professional inquiries or customer engagement, they adapt instantly to ensure clear, natural, and efficient conversations across industries.</p>
+            <p class="fun-fact"><em>Fun Fact: AI voice technology is now powering over 80% of customer service calls, reducing costs and boosting satisfaction!</em></p>
+        </div>
+
+        <!-- Right Side - AI Personality Selector -->
+        <div class="customization-box">
+            <h3 id="customization-title">Select Your AI Voice Mode</h3>
+
+            <div class="customization-options" id="ai-options">
+                <div class="option fade-in">
+                    <img src="ai-professional.jpg" alt="Professional Personality">
+                    <span>Business-Class AI</span>
+                </div>
+                <div class="option fade-in">
+                    <img src="ai-bubbly.jpg" alt="Bubbly Personality">
+                    <span>Conversational AI</span>
+                </div>
+            </div>
+
+            <!-- Button to Toggle Personalities -->
+            <button id="toggle-ai" class="btn-glow">Activate Voice Mode</button>
+        </div>
+    </div>
+
+    <!-- Floating Glow Effect -->
+    <div class="glow-circle"></div>
+</section>
+
+<!-- AI Intelligence Hub Section -->
+<section class="ai-intelligence">
+    <div class="intelligence-container">
+
+        <!-- Large Feature Card -->
+        <div class="feature-card large" id="top-card">
+            <div class="card-content">
+                <i class="fas fa-bolt"></i>
+                <h3>AI Voice Agents, Smarter Than Ever</h3>
+                <p>Redefine voice interactions with AI that continuously learns and refines responses for unmatched clarity and efficiency.</p>
+            </div>
+        </div>
+
+        <!-- Three Smaller Cards Below -->
+        <div class="feature-row">
+            <div class="feature-card small">
+                <div class="card-content">
+                    <i class="fas fa-headset"></i>
+                    <h3>Industry-Specific AI Communication</h3>
+                    <p>From healthcare to finance, our AI voice agents understand context, jargon, and intent—delivering tailored conversations across industries.</p>
+                </div>
+            </div>
+
+            <div class="feature-card small">
+                <div class="card-content">
+                    <i class="fas fa-clock"></i>
+                    <h3>24/7 AI-Driven Call Handling</h3>
+                    <p>Never miss a call—our AI voice agents provide seamless support day and night, ensuring uninterrupted customer engagement.</p>
+                </div>
+            </div>
+
+            <div class="feature-card small">
+                <div class="card-content">
+                    <i class="fas fa-wave-square"></i>
+                    <h3>Human-Like AI Voice Responses</h3>
+                    <p>Natural-sounding AI voices that adapt tone, speed, and clarity to create lifelike, engaging conversations.</p>
+                </div>
+            </div>
+
+            <div class="feature-card small">
+                <div class="card-content">
+                    <i class="fas fa-chart-bar"></i>
+                    <h3>AI-Powered Insights & Performance Boost</h3>
+                    <p>Track call efficiency, sentiment, and user engagement in real-time—optimizing every interaction for maximum impact.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Expanding Wave Background Effect -->
+    <div class="wave-bg"></div>
+</section>
+<!-- AI Experience Section -->
+<section class="ai-experience">
+    <div class="experience-container">
+        <!-- Left Side - Text Content -->
+        <div class="experience-text">
+            <span class="tagline">The Evolution of AI Voice Technology</span>
+            <h2>Transforming Customer Interactions – <span class="highlight">The Power of AI Voice Agents.</span></h2>
+            <p>Usinbel’s AI voice agents enhance conversations with real-time intelligence, delivering precise, natural, and efficient voice interactions across industries.</p>
+
+            <ul class="features-list">
+                <li><i class="fas fa-microphone"></i> AI-Driven Speech Processing</li>
+                <li><i class="fas fa-wave-square"></i> Adaptive Voice Tones & Responses</li>
+                <li><i class="fas fa-robot"></i> Instant, Human-Like Engagement</li>
+                <li><i class="fas fa-link"></i> Seamless API Integrations</li>
+            </ul>
+
+            <a href="#contact" class="btn-glow">Explore AI Voice Capabilities</a>
+        </div>
+
+        <!-- Right Side - AI Demo Preview -->
+        <div class="experience-demo">
+            <div class="demo-card">
+                <h3>Live AI Voice Agent Preview</h3>
+                <div class="video-container">
+                    <img src="ai-live-demo.jpg" alt="AI Live Demo">
+                </div>
+                <div class="audio-bar">
+                    <i class="fas fa-play"></i>
+                    <div class="progress">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <span class="time">0:58 / 3:10</span>
+                </div>
+                <p class="demo-description">Hear Usinbel’s AI voice agent in action—natural, responsive, and built to enhance real-time conversations.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- AI Integration Section -->
+<section class="integration-section">
+    <div class="integration-header">
+        <span class="tagline">Seamless Integrations</span>
+        <h2>Connect AI with Your Tools</h2>
+        <p>Enhance productivity with smart AI-powered integrations.</p>
+        <button class="btn-glow">Get Started</button>
+    </div>
+
+    <div class="integration-cards">
+        <div class="integration-card">
+            <h3>Slack</h3>
+            <p>Integrate AI with Slack for real-time team assistance.</p>
+        </div>
+        <div class="integration-card">
+            <h3>CRM</h3>
+            <p>Automate lead generation and customer support.</p>
+        </div>
+        <div class="integration-card">
+            <h3>WhatsApp</h3>
+            <p>Engage customers with AI-driven chat on WhatsApp.</p>
+        </div>
+        <div class="integration-card">
+            <h3>Zapier</h3>
+            <p>Connect AI workflows to thousands of apps effortlessly.</p>
+        </div>
+        <div class="integration-card">
+            <h3>Microsoft Teams</h3>
+            <p>Boost internal communications with AI-powered insights.</p>
+        </div>
+        <div class="integration-card">
+            <h3>Salesforce</h3>
+            <p>Automate and optimize sales pipelines with AI.</p>
+        </div>
+    </div>
+</section>
+
+<!-- AI Voice Agent Section -->
+<section class="ai-super-assistant">
+    <div class="assistant-container">
+        
+        <!-- Floating AI Info Card -->
+        <div class="assistant-card">
+            <h2><span class="highlight">AI Voice Agent</span> – Always On, Always Ready</h2>
+            <p>Usinbel’s AI Voice Agent is your always-available virtual representative, designed to handle calls, assist customers, and provide intelligent responses without delay. Built for efficiency, it ensures smooth, human-like interactions around the clock.</p>
+            
+            <div class="assistant-grid">
+                <div class="grid-item">
+                    <i class="fas fa-microphone"></i>
+                    <h3>Smart AI Call Handling</h3>
+                    <p>Manages inbound and outbound calls effortlessly, ensuring every customer gets a fast, helpful response.</p>
+                </div>
+                <div class="grid-item">
+                    <i class="fas fa-phone-volume"></i>
+                    <h3>Automated Appointments & Reminders</h3>
+                    <p>Schedules meetings, follow-ups, and reminders while syncing with business workflows.</p>
+                </div>
+                <div class="grid-item">
+                    <i class="fas fa-question-circle"></i>
+                    <h3>Instant Query Resolution</h3>
+                    <p>Responds to FAQs, resolves common issues, and directs complex queries to the right department instantly.</p>
+                </div>
+                <div class="grid-item">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>Proactive Customer Outreach</h3>
+                    <p>Engages customers with personalized follow-ups, promotions, and proactive service calls to enhance satisfaction.</p>
+                </div>
+            </div>
+
+            <button class="btn-glow">Discover AI-Powered Voice</button>
+        </div>
+
+        <!-- Right Side: AI Interactive Display -->
+        <div class="assistant-visual">
+            <div class="ai-visual-circle">
+                <img src="ai_avatar.png" alt="AI Avatar">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <div class="faq-item">
+            <h3 class="faq-question">How can I start using Usinbel AI Voice Agents?</h3>
+            <p class="faq-answer">Simply sign up, choose your AI package, and integrate Usinbel AI into your workflow.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">What makes Usinbel AI Voice Agents different?</h3>
+            <p class="faq-answer">Our AI Voice Agents use deep learning to deliver human-like conversations.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Which industries benefit from AI Voice Agents?</h3>
+            <p class="faq-answer">AI Voice Agents are used in customer service, healthcare, finance, and more.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">How secure are Usinbel AI Voice Agents?</h3>
+            <p class="faq-answer">We use end-to-end encryption and advanced security protocols.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Are there limits on AI call handling?</h3>
+            <p class="faq-answer">Usinbel AI can handle unlimited calls based on your chosen plan.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">How does Usinbel AI pricing work?</h3>
+            <p class="faq-answer">Pricing is based on the number of calls and AI features required.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">How does Usinbel AI improve customer interactions?</h3>
+            <p class="faq-answer">Our AI optimizes response times, reduces errors, and enhances engagement.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">How can I contact Usinbel for support or inquiries?</h3>
+            <p class="faq-answer">You can reach us via email, phone, or our contact page.</p>
+        </div>
+    </div>
+</section>
+
+
+       <!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-container">
+        <h2>Enhance Every Conversation with AI Voice Agents</h2>
+        <p>Ready to transform customer interactions? Leverage Usinbel’s AI Voice Agents for seamless, intelligent, and efficient communication.</p>
+        <a href="get-started.html" class="btn-glow">Get Started</a>
+
+        <div class="footer-links">
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Solutions</h3>
+                <ul>
+                    <li><a href="capabilities.html">Capabilities</a></li>
+                    <li><a href="sectors.html">Sectors</a></li>
+                    <li><a href="pricing.html">Plans</a></li>
+                    <li><a href="demo.html">Book a Demo</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li>Email: support@usinbel.com</li>
+                    <li>Phone: +61 411 317 444</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Usinbel. All rights reserved.</p>
+            <p>Revolutionizing business with AI-powered voice solutions.</p>
+        </div>
+    </div>
+</footer>
+
+
+<script src="script.js"></script>
+
+
+</body>
+</html>

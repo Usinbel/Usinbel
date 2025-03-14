@@ -1,0 +1,2085 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap");
+
+:root {
+    --primary-color: #a855f7;
+    --secondary-color: #ffffff;
+    --bg-color: #0a0a0a;
+    --font-primary: "Orbitron", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-primary);
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--secondary-color);
+    padding-top: 60px;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.9);
+    padding: 15px 5%; /* Using percentage for better scaling */
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+    z-index: 1000;
+}
+
+/* Navbar container using Bootstrap flex utilities */
+.navbar .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Navbar Logo */
+.logo {
+    font-size: 1.5rem; /* Responsive font size */
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    white-space: nowrap; /* Prevents wrapping */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 20px; /* Adjusts padding for mobile */
+    }
+    .logo {
+        font-size: 1.25rem;
+    }
+}
+
+/* Navbar Links */
+.nav-left, .nav-right {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Bootstrap-friendly spacing */
+}
+
+/* Nav Links */
+.nav-left a, .nav-right a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: 1.125rem; /* Bootstrap-friendly font sizing */
+    font-weight: 500;
+    padding: 0.625rem 0.9375rem; /* 10px 15px converted */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Active Page Styling */
+.nav-left .active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Hover Effect */
+.nav-left a:hover, .nav-right a:hover {
+    color: var(--primary-color);
+    text-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+}
+
+/* Contact Us Button */
+.nav-right a.contact-btn {
+    padding: 0.625rem 1.125rem; /* 10px 18px converted */
+    background: rgba(168, 85, 247, 0.8);
+    border-radius: 0.5rem; /* 8px */
+    box-shadow: 0 0 12px rgba(168, 85, 247, 0.4);
+    font-weight: bold;
+}
+
+/* Button Hover Effect */
+.nav-right a.contact-btn:hover {
+    background: #7d32df;
+    box-shadow: 0 0 20px var(--primary-color);
+}
+
+/* Navbar Item Alignment Fix */
+.nav-left li, .nav-right li {
+    display: flex;
+    align-items: center;
+}
+
+/* Fixes "Capabilities" Misalignment */
+.nav-left li:first-child {
+    margin-left: 0.625rem; /* 10px converted */
+}
+
+/* Mobile Menu */
+.hamburger-menu {
+    display: none;
+    font-size: 1.75rem; /* 28px */
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+    .nav-left, .nav-right {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .navbar-collapse {
+        background: rgba(10, 10, 10, 0.95);
+        padding: 1rem;
+        border-radius: 8px;
+    }
+}
+
+/* Responsive Navbar */
+@media (max-width: 1024px) {
+    .nav-left, .nav-right {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 20px 20px; /* Increased padding for better spacing */
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    opacity: 1;
+    transform: translateY(50px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* Show when scrolled into view */
+.hero.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-content {
+    background: none;
+    padding: 20px;
+}
+
+.tagline {
+    display: inline-block;
+    font-size: 14px;
+    color: var(--primary-color);
+    background: rgba(168, 85, 247, 0.1);
+    padding: 5px 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.highlight {
+    color: var(--primary-color);
+}
+
+.hero p {
+    font-size: 18px;
+    color: #bbb;
+    margin-bottom: 25px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.btn-glow {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 8px;
+    background: var(--primary-color);
+    color: #ffffff;
+    box-shadow: 0 0 10px var(--primary-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-glow:hover {
+    background: #7d32df;
+    box-shadow: 0 0 20px var(--primary-color);
+}
+
+
+
+/* Capabilities Section */
+.capabilities-container {
+    text-align: center;
+    padding: 170px 20px;
+}
+
+/* Title Alignment Fix */
+.capabilities-container h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;
+    width: 100%;
+}
+
+/* Subtitle */
+.capabilities-container p {
+    font-size: 1.2rem;
+    color: #bbb;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Capabilities Grid */
+.capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 per row */
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+/* Capability Cards */
+.capability-card {
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    border: 1.5px solid rgba(168, 85, 247, 0.8); /* Stronger neon border */
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.02); /* Almost invisible */
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.5); /* Softer glow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.capability-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 1); /* Glowing hover */
+}
+
+/* Card Titles */
+.capability-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center; /* Now fully centered */
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Card Description */
+.capability-card p {
+    font-size: 16px;
+    color: #bbb;
+    text-align: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .capabilities-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .capabilities-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 per row for mobile */
+    }
+}
+
+
+
+/* Constellation Background */
+#constellation-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Keeps it behind everything */
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* AI Discovery Section */
+.ai-discovery {
+    text-align: center;
+    position: relative;
+    padding: 7.5rem 1.25rem; /* 120px 20px */
+    overflow: hidden;
+}
+
+/* Container Flex */
+.discovery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 75rem; /* 1200px */
+    margin: auto;
+    position: relative;
+    z-index: 2;
+    gap: 2rem; /* 32px */
+}
+
+/* Left Side - AI That Adapts */
+.discovery-box {
+    flex: 1 1 40%;
+    text-align: left;
+}
+
+/* Right Side - Text */
+.discovery-text {
+    flex: 1 1 50%;
+    text-align: left;
+}
+
+/* Discovery Heading */
+.discovery-heading {
+    font-size: 2.25rem; /* 36px */
+    color: var(--secondary-color);
+    text-shadow: 0 0 10px var(--primary-color);
+    margin-bottom: 1.25rem; /* 20px */
+}
+
+/* Vertical Features */
+.discovery-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9375rem; /* 15px */
+    margin-top: 1.25rem; /* 20px */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .discovery-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .discovery-box,
+    .discovery-text {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Feature Items - Start Offscreen */
+.feature {
+    font-size: 1.125rem; /* 18px */
+    color: var(--secondary-color);
+    background: rgba(168, 85, 247, 0.1);
+    padding: 0.625rem 0.9375rem; /* 10px 15px */
+    border-radius: 0.5rem; /* 8px */
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 0.625rem; /* 10px */
+    opacity: 0;
+    transform: translateY(1.875rem) scale(0.8) rotate(-5deg); /* 30px */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* Dispersing Animation */
+@keyframes disperse {
+    0% {
+        opacity: 0;
+        transform: translateY(1.875rem) scale(0.8) rotate(-5deg);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateY(0) scale(1.05) rotate(2deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(0);
+    }
+}
+
+/* Apply Animation */
+.feature.show {
+    animation: disperse 1s ease-in-out forwards;
+}
+
+/* Responsive Fix */
+@media (max-width: 1024px) {
+    .discovery-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .discovery-box,
+    .discovery-text {
+        width: 90%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .discovery-features {
+        gap: 0.625rem; /* 10px */
+    }
+
+    .feature {
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+        font-size: 1rem; /* Slightly smaller on mobile */
+        padding: 0.5rem 0.75rem; /* Reduce padding */
+    }
+}
+
+/* AI Customization Section */
+.ai-customization {
+    position: relative;
+    overflow: hidden;
+    padding: 120px 20px;
+}
+
+/* Layout Structure */
+.customization-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    gap: 50px;
+}
+
+/* Bootstrap Grid Compatibility */
+@media (max-width: 992px) {
+    .customization-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .customization-text {
+        max-width: 90%;
+    }
+
+    .customization-box {
+        width: 100%;
+        max-width: 450px;
+    }
+}
+
+/* Left Side Text */
+.customization-text {
+    max-width: 500px;
+    text-align: left;
+}
+
+.customization-text h2 {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.customization-text p {
+    font-size: 20px;
+    color: #bbb;
+    margin-top: 15px;
+}
+
+.fun-fact {
+    font-size: 18px;
+    font-style: italic;
+    color: #999;
+    margin-top: 20px;
+}
+
+/* Right Side - AI Personality Selector */
+.customization-box {
+    position: relative;
+    width: 450px;
+    height: auto;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+.customization-box h3 {
+    margin-bottom: 0.5cm; /* Adds space below the title */
+}
+
+
+/* AI Personalities Grid */
+.customization-options {
+    display: flex;
+    justify-content: center; /* Centers items horizontally */
+    gap: 20px; /* Space between the two options */
+    text-align: center; /* Centers text inside each option */
+}
+
+.option {
+    display: flex;
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text */
+    width: 45%; /* Ensure each option has enough space */
+}
+
+.option img {
+    width: 100px; /* Adjust the size as needed */
+    height: auto;
+    border-radius: 10px;
+}
+
+.option span {
+    margin-top: 10px; /* Adds some space between the image and text */
+    display: block; /* Ensures the text is treated as a block and aligns centrally */
+    font-size: 16px;
+    font-weight: bold;
+    color: white; /* Adjust the color as needed */
+    text-align: center; /* Ensures text is centered */
+}
+
+/* Staggered Delays */
+.option:nth-child(1) {
+    animation-delay: 0.3s;
+}
+.option:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+/* Add Animation when class is added */
+.option.show {
+    animation: fadeExpand 1s ease-in-out forwards;
+}
+
+/* Glowing Circle Background */
+.glow-circle {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.6), rgba(10, 10, 10, 0));
+    border-radius: 50%;
+    top: 70%;
+    left: -40%;
+    transform: translate(-50%, -50%);
+    filter: blur(80px);
+    animation: pulseGlow 3s infinite ease-in-out;
+    z-index: -1;
+}
+
+/* Glow Animation */
+@keyframes pulseGlow {
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+}
+
+/* Bootstrap-Responsive Enhancements */
+@media (max-width: 1024px) {
+    .customization-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .customization-box {
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .customization-options {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Adjusting Glow Circle */
+    .glow-circle {
+        width: 400px;
+        height: 400px;
+        top: 75%;
+        left: -30%;
+        filter: blur(60px);
+    }
+}
+
+@media (max-width: 768px) {
+    .customization-options {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .option {
+        width: 90%;
+    }
+
+    .customization-text {
+        text-align: center;
+    }
+
+    /* Smaller Glow Circle for Mobile */
+    .glow-circle {
+        width: 300px;
+        height: 300px;
+        top: 80%;
+        left: -20%;
+        filter: blur(40px);
+    }
+}
+
+/* AI Intelligence Hub Section */
+.ai-intelligence {
+    text-align: center;
+    position: relative;
+    padding: 120px 20px;
+    overflow: hidden;
+}
+
+/* Container */
+.intelligence-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Feature Card General Styles */
+.feature-card {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+    opacity: 0;
+    transform: scale(0.7) rotateX(15deg);
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+/* Large Feature Card */
+.feature-card.large {
+    width: 60%;
+    padding: 40px;
+}
+
+/* Smaller Feature Cards */
+.feature-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.feature-card.small {
+    width: 40%;
+    padding: 30px;
+}
+
+/* Icons */
+.feature-card i {
+    font-size: 36px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* Headings */
+.feature-card h3 {
+    font-size: 22px;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+/* Descriptions */
+.feature-card p {
+    font-size: 18px;
+    color: #bbb;
+}
+
+/* Bootstrap Responsive Enhancements */
+@media (max-width: 1024px) {
+    .feature-card.large {
+        width: 80%;
+    }
+
+    .feature-row {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .feature-card.small {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .feature-card.large {
+        width: 100%;
+    }
+
+    .feature-card.small {
+        width: 100%;
+    }
+}
+
+/* Animation Effect */
+.feature-card.wave-show {
+    opacity: 1;
+    transform: scale(1) rotateX(0deg);
+}
+
+/* Expanding Wave Background Effect */
+/* AI Experience Section */
+.ai-experience {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Container */
+.experience-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 50px;
+}
+
+/* Left Side - Text */
+.experience-text {
+    flex: 1;
+    max-width: 500px;
+    text-align: left;
+}
+
+.experience-text h2 {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.experience-text .highlight {
+    color: var(--primary-color);
+}
+
+.experience-text p {
+    font-size: 20px;
+    color: #bbb;
+    margin-bottom: 20px;
+}
+
+/* Features List */
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.features-list li {
+    font-size: 18px;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 1024px) {
+    .experience-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .experience-text {
+        max-width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .experience-text h2 {
+        font-size: 36px;
+    }
+
+    .experience-text p {
+        font-size: 18px;
+    }
+
+    .features-list li {
+        font-size: 16px;
+    }
+}
+
+/* Features List Icons */
+.features-list li i {
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* Right Side - AI Demo */
+.experience-demo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* AI Demo Card */
+.demo-card {
+    width: 400px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+    border: 2px solid transparent;
+    animation: pulseBorderGlow 2s infinite alternate;
+}
+
+/* Pulsating Border Animation */
+@keyframes pulseBorderGlow {
+    0% { border-color: rgba(168, 85, 247, 0.5); }
+    100% { border-color: rgba(168, 85, 247, 1); }
+}
+
+/* AI Preview Image */
+.video-container img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+}
+
+/* Audio Bar */
+.audio-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+/* Audio Bar Icons */
+.audio-bar i {
+    color: var(--primary-color);
+    font-size: 20px;
+}
+
+/* Progress Bar */
+.progress {
+    width: 100%;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 0 10px;
+    position: relative;
+    border-radius: 5px;
+}
+
+/* Animated Progress Fill */
+.progress-fill {
+    width: 40%;
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .experience-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .experience-demo {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .demo-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .video-container img {
+        border-radius: 8px;
+    }
+
+    .audio-bar {
+        padding: 8px;
+    }
+
+    .progress {
+        height: 4px;
+    }
+}
+
+/* Demo Description */
+.demo-description {
+    font-size: 16px;
+    color: #bbb;
+    margin-top: 15px;
+}
+
+/* Hover Effect for Demo Card */
+.demo-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Fade-in & Scale Animation */
+@keyframes fadeInScale {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Apply Animation to Both Sides */
+.experience-text, .experience-demo {
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInScale 1s ease-in-out forwards;
+}
+
+/* Feature Card Transparent Effect */
+.feature-card {
+    background: transparent !important; /* Fully transparent background */
+    box-shadow: none !important; /* Removes any shadow */
+    backdrop-filter: none !important; /* Ensures no blur */
+}
+
+/* Feature Card Inner Content */
+.card-content {
+    background: transparent !important; /* Fully transparent inner content */
+    color: #fff; /* Keeps text visible */
+}
+
+/* Feature Card Icons */
+.feature-card i {
+    color: #fff; /* Ensures icons remain visible */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .experience-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .experience-text {
+        text-align: center;
+    }
+
+    .experience-demo {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .demo-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .video-container img {
+        border-radius: 8px;
+    }
+
+    .audio-bar {
+        padding: 8px;
+    }
+
+    .progress {
+        height: 4px;
+    }
+}
+
+/* Integration Section */
+.integration-section {
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+}
+
+/* Tagline */
+.integration-header {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.integration-header .tagline {
+    font-size: 20px;
+    color: var(--primary-color);
+    font-weight: bold;
+    text-shadow: 0 0 12px var(--primary-color);
+    letter-spacing: 1px;
+}
+
+.integration-header p {
+    font-size: 18px;
+    color: var(--secondary-color);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Glowing Button */
+.integration-header .btn-glow {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px 25px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 0 20px var(--primary-color);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.integration-header .btn-glow:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--primary-color);
+}
+
+/* Grid Layout */
+.integration-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Cards in a row */
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+/* Individual Cards */
+.integration-card {
+    background: none; /* Completely Transparent */
+    border: none;
+    padding: 25px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: none; /* Removes any background effects */
+    transition: transform 0.3s ease-in-out;
+}
+
+.integration-card:hover {
+    transform: translateY(-5px);
+}
+
+.integration-card h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--primary-color);
+}
+
+.integration-card p {
+    color: var(--secondary-color);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Responsive Grid */
+@media (max-width: 1024px) {
+    .integration-cards {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .integration-cards {
+        grid-template-columns: 1fr; /* Single column for small screens */
+    }
+}
+/* AI Super Assistant Section */
+.ai-super-assistant {
+    background: transparent;
+    padding: 100px 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Container */
+.assistant-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    width: 100%;
+    gap: 60px;
+}
+
+/* Assistant Card (Left Side) */
+.assistant-card {
+    width: 50%;
+    background: transparent;
+    padding: 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: none;
+    animation: emergeFade 1.2s ease-out forwards;
+}
+
+.assistant-card h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: inherit;
+}
+
+.assistant-card p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 30px;
+    color: inherit;
+}
+
+/* Grid Layout for Features */
+.assistant-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.grid-item {
+    padding: 20px;
+    border-radius: 10px;
+    background: transparent;
+    transition: transform 0.3s ease-in-out;
+}
+
+.grid-item:hover {
+    transform: scale(1.05);
+}
+
+.grid-item i {
+    font-size: 30px;
+    color: inherit;
+}
+
+.grid-item h3 {
+    font-size: 1.3rem;
+    margin-top: 10px;
+    color: inherit;
+}
+
+.grid-item p {
+    font-size: 1rem;
+    opacity: 0.8;
+    color: inherit;
+}
+
+/* AI Avatar Display (Right Side) */
+.assistant-visual {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Increase AI Avatar Size */
+/* AI Avatar Display (Right Side) */
+.assistant-visual {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Bigger AI Visual Circle */
+.ai-visual-circle {
+    width: 350px; /* Increased size */
+    height: 350px; /* Increased size */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    box-shadow: none;
+    animation: floatGlow 2s infinite alternate;
+    overflow: hidden; /* Ensures image fits inside */
+}
+
+/* Make Image Fit Inside the Circle */
+.ai-visual-circle img {
+    width: 100%; /* Ensures it fills the circle */
+    height: 100%;
+    object-fit: cover; /* Prevents distortion */
+    border-radius: 50%;
+}
+
+
+/* Button */
+.btn-glow {
+    margin-top: 20px;
+    background: inherit;
+    border: 1px solid
+} 
+
+
+/* General styling */
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #000;
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.faq-section {
+    text-align: center;
+    margin: 50px auto;
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+}
+
+.faq-section h2 {
+    padding-bottom: 30px; /* Added space below heading */
+}
+
+.faq-container {
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+    text-align: left;
+}
+
+.faq-question {
+    font-size: 20px;
+    color: #8f4ee5; /* Updated question color */
+    margin-bottom: 5px;
+}
+
+.faq-answer {
+    font-size: 16px;
+    color: #bbb;
+}
+
+
+/* Footer Styling */
+.footer {
+    position: relative;
+    padding: 60px 10%;
+    text-align: center;
+    background: transparent; /* Directly on constellation background */
+    color: white;
+}
+
+.footer h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.footer p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.footer-container .btn-glow {
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+
+/* Footer Column */
+.footer-column {
+    text-align: left;
+}
+
+.footer-column h3 {
+    color: #a855f7;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #a855f7;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* Footer */
+footer {
+    text-align: center; /* ✅ Centers the text */
+    padding: 20px;
+    font-size: 1rem;
+    color: #ffffff;
+    background: transparent; /* ✅ Ensures it blends with the background */
+}
+
+/* Glowing Star Background */
+.glowing-star {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250px; /* Adjust size */
+    height: 250px;
+    background: url("star-sparkle.png") no-repeat center;
+    background-size: contain;
+    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.8));
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+    animation: pulseGlow 3s infinite alternate ease-in-out;
+    z-index: -1;
+}
+
+
+/* Glow Animation */
+@keyframes pulseGlow {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.7;
+        filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.8));
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+        filter: drop-shadow(0 0 50px rgba(255, 255, 255, 1));
+    }
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 100px 10%;
+    text-align: center;
+    background: transparent;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 30px;
+    border-radius: 10px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+}
+
+.contact-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.contact-container .subtext {
+    font-size: 1rem;
+    color: #bbb;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group {
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 1rem;
+    color: #bbb;
+    margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Button */
+.btn-glow {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: #fff;
+    background: linear-gradient(90deg, #a855f7, #7b61ff);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.btn-glow:hover {
+    background: linear-gradient(90deg, #7b61ff, #a855f7);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.8);
+}
+
+/* Form Status */
+#form-status {
+    margin-top: 15px;
+    color: #0f0;
+    font-size: 1rem;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Contact Info */
+.contact-info {
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.contact-info i {
+    color: #a855f7;
+    margin-right: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 20px;
+    }
+}
+/* Navigation Bar Fix */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+}
+
+/* Fix alignment for right-side menu */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Contact Us Button Fix */
+.nav-right li {
+    list-style: none;
+}
+
+.nav-right a {
+    text-decoration: none;
+    padding: 8px 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Get Started Button */
+/* Ensure Right Side of Navbar is Aligned Properly */
+.nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Adjusts spacing between Contact Us & Get Started */
+}
+
+/* Fix Get Started Button Alignment */
+/* Slightly Shift Get Started Button */
+.nav-right .btn-glow {
+    padding: 10px 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap; /* Prevents text from breaking */
+    margin-left: px; /* Adjusts position slightly to the right */
+
+}
+
+
+/* Fix Button Alignment */
+.nav-right .btn-glow {
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 550px;
+    background: rgba(15, 15, 30, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.4);
+    padding: 15px;
+    z-index: 1000;
+    display: flex;
+}
+
+/* Show dropdown on hover */
+.nav-item:hover .dropdown-content {
+    display: flex;
+}
+
+/* Layout for the Two Panels */
+.capabilities-menu {
+    display: flex;
+    width: 100%;
+}
+
+/* Left Panel - Capabilities List */
+.capabilities-list {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 15px;
+}
+
+.capability-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.capability-item img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+}
+
+.capability-item span {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.capability-item:hover, .capability-item.active {
+    background: rgba(138, 43, 226, 0.2);
+    transform: scale(1.05);
+}
+
+/* Right Panel - Description */
+.capabilities-description {
+    width: 60%;
+    padding-left: 15px;
+}
+
+.capability-desc {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.capability-desc.active {
+    display: block;
+}
+
+.capability-desc h3 {
+    color: #8a2be2;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.capability-desc p, .capability-desc ul {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.capability-desc ul {
+    margin-top: 8px;
+    padding-left: 20px;
+}
+
+.capability-desc ul li {
+    list-style-type: disc;
+}
+/* Hide dropdown by default */
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 550px;
+    background: rgba(15, 15, 30, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.4);
+    padding: 15px;
+    z-index: 1000;
+    display: none; /* Ensure it stays hidden */
+}
+
+/* Show dropdown when JavaScript toggles it */
+.dropdown-content.show {
+    display: flex;
+}
+
+/* Ensure dropdown doesn't block clicks */
+.dropdown-content.hidden {
+    display: none;
+}
+/* Right Panel - Capabilities Description */
+.capabilities-description {
+    width: 60%;
+    padding-left: 15px;
+}
+
+/* Capability Title */
+.capability-desc h3 {
+    color: #8a2be2; /* Neon Purple */
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+}
+
+/* Capability Description Text */
+.capability-desc p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+/* Sub-Options (Like Kapture CX) */
+.capability-sub-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sub-option {
+    background: rgba(138, 43, 226, 0.2); /* Neon background */
+    padding: 8px 12px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.sub-option:hover {
+    background: rgba(138, 43, 226, 0.4); /* Brighter on hover */
+    transform: scale(1.05);
+}
+
+.sub-option span {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.sub-option p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    margin-top: 2px;
+}
+/* Dropdown Positioning */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 600px;
+    background: rgba(15, 15, 30, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.4);
+    padding: 15px;
+    z-index: 1000;
+}
+
+/* Ensure the dropdown appears below the button */
+.nav-item {
+    position: relative;
+}
+
+/* Dropdown Animation */
+.dropdown-content.show {
+    display: flex;
+}
+/* Dropdown Base Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 600px;
+    background: rgba(15, 15, 30, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.4);
+    padding: 15px;
+    z-index: 1000;
+}
+
+/* Show dropdown when JavaScript toggles it */
+.dropdown-content.show {
+    display: flex;
+}
+
+/* Sectors Menu Layout */
+.sectors-menu {
+    display: flex;
+    width: 100%;
+}
+
+/* Left Panel - Sectors List */
+.sectors-list {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 15px;
+}
+
+.sector-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.sector-item img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+}
+
+.sector-item span {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.sector-item:hover, .sector-item.active {
+    background: rgba(138, 43, 226, 0.2);
+    transform: scale(1.05);
+}
+
+/* Right Panel - Sectors Description */
+.sectors-description {
+    width: 60%;
+    padding-left: 15px;
+}
+
+.sector-desc {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.sector-desc.active {
+    display: block;
+}
+
+/* Sector Title */
+.sector-desc h3 {
+    color: #8a2be2;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+}
+
+/* Sector Description Text */
+.sector-desc p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+/* Sub-Options (Like Capabilities Layout) */
+.sector-sub-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sub-option {
+    background: rgba(138, 43, 226, 0.2);
+    padding: 8px 12px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.sub-option:hover {
+    background: rgba(138, 43, 226, 0.4);
+    transform: scale(1.05);
+}
+
+.sub-option span {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.sub-option p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    margin-top: 2px;
+}
+/* About Us Dropdown Styling */
+#about-us-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 550px;
+    background: rgba(15, 15, 30, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.4);
+    padding: 15px;
+    z-index: 1000;
+    display: flex;
+}
+
+/* Show About Us Dropdown when activated */
+#about-us-dropdown.show {
+    display: flex;
+}
+
+/* Two-Panel Layout */
+.about-menu {
+    display: flex;
+    width: 100%;
+}
+
+/* Left Panel - About Us Categories */
+.about-list {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 15px;
+}
+
+.about-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.about-item img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1); /* Ensures white icons */
+}
+
+.about-item span {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Hover & Active Effects */
+.about-item:hover, .about-item.active {
+    background: rgba(138, 43, 226, 0.2);
+    transform: scale(1.05);
+}
+
+/* Right Panel - About Us Description */
+.about-description {
+    width: 60%;
+    padding-left: 15px;
+}
+
+/* Hide all descriptions except the active one */
+.about-desc {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.about-desc.active {
+    display: block;
+}
+
+/* Title Styling */
+.about-desc h3 {
+    color: #8a2be2;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+/* Paragraph Text */
+.about-desc p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+/* Sub-Options (If Needed) */
+.about-sub-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sub-option {
+    background: rgba(138, 43, 226, 0.2);
+    padding: 8px 12px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.sub-option:hover {
+    background: rgba(138, 43, 226, 0.4);
+    transform: scale(1.05);
+}
+
+.sub-option span {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.sub-option p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    margin-top: 2px;
+}
+/* Ensure About Us Dropdown is Hidden Initially */
+#about-us-dropdown {
+    display: none; /* Now it's hidden initially */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 550px;
+    background: rgba(15, 15, 30, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.4);
+    padding: 15px;
+    z-index: 1000;
+    display: none; /* Ensure it starts hidden */
+}
+
+/* Show dropdown when JavaScript toggles the "show" class */
+#about-us-dropdown.show {
+    display: flex;
+}
