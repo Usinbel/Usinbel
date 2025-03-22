@@ -1,0 +1,175 @@
+Contact Us 
+
+/* Bootstrap Import */
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css');
+
+/* Contact Section */
+.contact-section {
+    padding: 100px 0
+    display: flex;
+    
+    text-align: center;
+    background: transparent;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+
+.contact-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.contact-container .subtext {
+    font-size: 1rem;
+    color: #bbb;
+    margin-bottom: 20px;
+}
+/* Form Styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group {
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 1rem;
+    color: #bbb;
+    margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 96%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Button */
+.btn-glow {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: #fff;
+    background: linear-gradient(90deg, #a855f7, #7b61ff);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-glow:hover {
+    background: linear-gradient(90deg, #7b61ff, #a855f7);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.8);
+}
+
+
+
+/* Form Status */
+#form-status {
+    margin-top: 15px;
+    color: #0f0;
+    font-size: 1rem;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Contact Info */
+.contact-info {
+    margin-top: 3px;
+    font-size: 1.1rem;
+  text-align: left; /* Align text to the left */
+}
+
+.contact-info p {
+    margin: 2px 0;
+    color: #fff; /* Makes text white */
+    font-weight: bold; /* Optional: Makes "Phone:" and "Email:" stand out */
+}
+
+.contact-info i {
+    color: #a855f7;
+    margin-right: 1px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 20px;
+    }
+}
+
+/* Navigation Bar Fix */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+}
+
+/* Fix alignment for right-side menu */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Contact Us Button Fix */
+.nav-right li {
+    list-style: none;
+}
+
+.nav-right a {
+    text-decoration: none;
+    padding: 8px 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* Center the contact form */
+.contact-form {
+    max-width: 500px; /* Prevents it from being too wide */
+    margin: 0 auto; /* Centers it horizontally */
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8); /* Optional: Adds some contrast */
+    border-radius: 10px;
+    text-align: center; /* Ensures text inside is centered */
+}
+
+
+
+
+.contact-form {
+    width: 100%;
+    max-width: 500px; /* Adjust to match your design */
+}
+
+.input-group {
+    width: 100%;
+}
